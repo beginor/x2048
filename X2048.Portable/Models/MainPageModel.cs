@@ -18,7 +18,7 @@ namespace Beginor.X2048.Models {
         private bool won;
         private bool over;
 
-        private GridViewModel grid;
+        private readonly GridViewModel grid;
 
         public GridViewModel Grid {
             get {
@@ -80,6 +80,10 @@ namespace Beginor.X2048.Models {
         }
 
         public void StartNewGame() {
+            if (Score > Best) {
+                Best = Score;
+            }
+            Score = 0;
             grid.Empty();
             for (var i = 0; i < StartTiles; i++) {
                 AddRandomTile();
