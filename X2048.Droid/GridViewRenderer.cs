@@ -6,9 +6,11 @@ using Beginor.X2048.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+[assembly: Xamarin.Forms.ExportRenderer(typeof(Beginor.X2048.Views.GridView), typeof(Beginor.X2048.GridViewRenderer))]
+
 namespace Beginor.X2048 {
 
-    public class GameViewRenderer : VisualElementRenderer<GridView> {
+    public class GridViewRenderer : VisualElementRenderer<GridView> {
 
         protected override void OnElementChanged(ElementChangedEventArgs<GridView> e) {
             base.OnElementChanged(e);
