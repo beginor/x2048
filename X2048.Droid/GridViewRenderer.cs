@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using Android.Graphics;
 using Android.Views;
 using Beginor.X2048.Views;
 using Xamarin.Forms;
@@ -25,25 +24,31 @@ namespace Beginor.X2048 {
         }
 
         private float startX, startY;
+        private bool moved;
 
         public override bool DispatchTouchEvent(MotionEvent e) {
             if (e.Action == MotionEventActions.Down) {
                 startX = e.GetX();
                 startY = e.GetY();
+                moved = false;
                 return true;
             }
-            if (e.Action == MotionEventActions.Up) {
-                var deltaX = e.GetX() - startX;
-                var deltaY = e.GetY() - startY;
-                if (Math.Abs(deltaX) > 10 || Math.Abs(deltaY) > 10) {
-                    if (Math.Abs(deltaX) > Math.Abs(deltaY)) {
-                       Element.OnSwipe(deltaX > 0 ? SwipDirection.Right : SwipDirection.Left);
+            if (e.Action == MotionEventActions.Move) {
+                if (!moved) {
+                    var deltaX = e.GetX() - startX;
+                    var deltaY = e.GetY() - startY;
+                    if (Math.Abs(deltaX) > 10 || Math.Abs(deltaY) > 10) {
+                        if (Math.Abs(deltaX) > Math.Abs(deltaY)) {
+                            Element.OnSwipe(deltaX > 0 ? SwipDirection.Right : SwipDirection.Left);
+                        }
+                        else {
+                            Element.OnSwipe(deltaY > 0 ? SwipDirection.Down : SwipDirection.Up);
+                        }
+                        moved = true;
                     }
-                    else {
-                       Element.OnSwipe(deltaY > 0 ? SwipDirection.Down : SwipDirection.Up);
-                    }
+                    return true;
                 }
-                return true;
+
             }
             return base.DispatchTouchEvent(e);
         }
