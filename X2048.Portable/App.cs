@@ -16,7 +16,7 @@ namespace Beginor.X2048 {
     public static class AppConsts {
 
         public readonly static Color MainPageBackgroundColor = Color.FromHex("#FAF8EF");
-        public static readonly Thickness MainPagePadding = new Thickness(8, Device.OnPlatform(20, 0, 0), 8, 8);
+        public static readonly Thickness MainPagePadding = new Thickness(8, Device.OnPlatform(0, 0, 0), 8, 8);
 
         public static readonly Color TitleTextColor = Color.FromHex("#776e65");
         public static readonly Font TitleFont = Font.SystemFontOfSize(50d, FontAttributes.Bold);

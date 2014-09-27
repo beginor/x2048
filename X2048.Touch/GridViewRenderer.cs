@@ -13,7 +13,10 @@ namespace Beginor.X2048 {
         protected override void OnElementChanged(ElementChangedEventArgs<GridView> e) {
             base.OnElementChanged(e);
             SetBackgroundColor(Element.BackgroundColor);
-            AddGestureRecognizer(new UISwipeGestureRecognizer(SwipeGestureHandler));
+            AddGestureRecognizer(new UISwipeGestureRecognizer(SwipeGestureHandler) { Direction = UISwipeGestureRecognizerDirection.Left });
+            AddGestureRecognizer(new UISwipeGestureRecognizer(SwipeGestureHandler) { Direction = UISwipeGestureRecognizerDirection.Right });
+            AddGestureRecognizer(new UISwipeGestureRecognizer(SwipeGestureHandler) { Direction = UISwipeGestureRecognizerDirection.Up });
+            AddGestureRecognizer(new UISwipeGestureRecognizer(SwipeGestureHandler) { Direction = UISwipeGestureRecognizerDirection.Down });
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e) {

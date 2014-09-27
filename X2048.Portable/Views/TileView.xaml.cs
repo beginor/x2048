@@ -1,6 +1,5 @@
-﻿using Xamarin.Forms;
+﻿﻿using Xamarin.Forms;
 using Beginor.X2048.Models;
-using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace Beginor.X2048.Views {
@@ -26,6 +25,12 @@ namespace Beginor.X2048.Views {
 
         public TileView() {
             InitializeComponent();
+            Opacity = 0.2;
+        }
+
+        protected override async void OnParentSet() {
+            base.OnParentSet();
+            await this.FadeTo(1.0);
         }
 
         async void OnViewModelPositionUpdated(object sender, System.EventArgs e) {
