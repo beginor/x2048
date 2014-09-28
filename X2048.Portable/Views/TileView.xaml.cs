@@ -1,4 +1,4 @@
-﻿﻿using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Beginor.X2048.Models;
 using System.Threading.Tasks;
 
@@ -25,12 +25,17 @@ namespace Beginor.X2048.Views {
 
         public TileView() {
             InitializeComponent();
-            Opacity = 0.2;
+            //Opacity = 0.2;
+            //Scale = 0.2;
         }
 
-        protected override async void OnParentSet() {
+        protected override void OnParentSet() {
             base.OnParentSet();
-            await this.FadeTo(1.0);
+            this.Animate(name: "ScaleAndFade", callback: d => {
+                Opacity = d;
+                Scale = d;
+            }, start: 0.2, end: 1.0);
+            //await this.FadeTo(1.0);
         }
 
         async void OnViewModelPositionUpdated(object sender, System.EventArgs e) {
