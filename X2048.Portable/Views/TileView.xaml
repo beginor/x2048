@@ -5,7 +5,7 @@
     xmlns:converters="clr-namespace:Beginor.X2048.Converters;assembly=Beginor.X2048.Portable"
     xmlns:x2048="clr-namespace:Beginor.X2048;assembly=Beginor.X2048.Portable"
     x:Class="Beginor.X2048.Views.TileView"
-    Padding="4"
+    Padding="{x:Static x2048:AppConsts.TileViewPadding}"
     >
 
     <ContentView.Resources>

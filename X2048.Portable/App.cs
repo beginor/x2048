@@ -25,7 +25,7 @@ namespace Beginor.X2048 {
 
         public readonly static Color GridBackGroundColor = Color.FromHex("#BBADA0");
 
-        public static readonly double TileViewPadding = Device.OnPlatform(6, 6, 6);
+        public static readonly Thickness TileViewPadding = new Thickness(8.0);
 
         public static readonly int TileCount = 4;
 

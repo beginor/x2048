@@ -25,16 +25,22 @@
 
                     <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand"
                                  Orientation="Horizontal">
-                        <StackLayout Orientation="Vertical" BackgroundColor="{x:Static x2048:AppConsts.ScoreLayoutBackgroundColor}"
-                                     WidthRequest="{x:Static x2048:AppConsts.ScoreLayoutWidth}">
-                            <Label Text="SCORE" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
-                            <Label Text="{Binding Path=Score}" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical" BackgroundColor="{x:Static x2048:AppConsts.ScoreLayoutBackgroundColor}"
-                                     WidthRequest="{x:Static x2048:AppConsts.ScoreLayoutWidth}">
-                            <Label Text="BEST" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
-                            <Label Text="{Binding Path=Best}" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
-                        </StackLayout>
+                        <Frame HasShadow="false" BackgroundColor="{x:Static x2048:AppConsts.ScoreLayoutBackgroundColor}">
+                            <StackLayout Orientation="Vertical"
+                                         WidthRequest="{x:Static x2048:AppConsts.ScoreLayoutWidth}">
+                                <Label Text="SCORE" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
+                                <Label Text="{Binding Path=Score}" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame HasShadow="false" BackgroundColor="{x:Static x2048:AppConsts.ScoreLayoutBackgroundColor}">
+                            <StackLayout Orientation="Vertical"
+                                         WidthRequest="{x:Static x2048:AppConsts.ScoreLayoutWidth}">
+                                <Label Text="BEST" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
+                                <Label Text="{Binding Path=Best}" HorizontalOptions="Center" TextColor="{x:Static x2048:AppConsts.ScoreTextColor}" />
+                            </StackLayout>
+                        </Frame>
+
                     </StackLayout>
                 </StackLayout>
 

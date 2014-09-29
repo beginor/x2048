@@ -47,7 +47,7 @@ Global
 		{9D3AC68F-4BC6-48A2-A001-50065472F4DB}.Release|iPhone.Deploy.0 = Release|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = X2048.Touch\X2048.Touch.csproj
+		StartupItem = X2048.Droid\X2048.Droid.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,8 +25,6 @@ namespace Beginor.X2048.Views {
 
         public TileView() {
             InitializeComponent();
-            //Opacity = 0.2;
-            //Scale = 0.2;
         }
 
         protected override void OnParentSet() {
@@ -34,7 +32,7 @@ namespace Beginor.X2048.Views {
             this.Animate(name: "ScaleAndFade", callback: d => {
                 Opacity = d;
                 Scale = d;
-            }, start: 0.2, end: 1.0);
+            }, start: 0.5, end: 1.0);
             //await this.FadeTo(1.0);
         }
 
